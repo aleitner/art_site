@@ -1,22 +1,44 @@
 <h1>Chuteki Art</h1>
+
+<center><%= will_paginate @arts %></center>
+
 <div id="gallery" class="container">
   <% i=0 %>
   <% total_works = @arts.count %>
   <% for work in @arts %>
     <% if i%3==0 %>
       <div class="row">
-    <% end %> 
+    <% end %>
     <div class="col-md-4">
-      <div class="thumbnail center-block" style="width:275px;height:300px">
-        <a href="<%= work.image.url %>"><img src="<%= work.image.medium.url %>"></a>
+      <div class="thumbnail center-block" style="width:275px;height:auto;overflow:hidden;border:transparent;">
+        <a href="#" data-toggle="modal" data-target="#myModal<%=i%>"><img src="<%= work.image.medium.url %>"></a>
         <center><%= work.name %></center>
       </div>
     </div>
-    <% i+=1 %> 
-    <% if i%3==0 || i == total_works%>
+
+    <div class="modal fade" id="myModal<%=i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<%=i%>">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel<%=i%>"><%= work.name %></h4>
+          </div>
+          <div class="modal-body">
+            <center><img src="<%=work.image.large.url%>" style="max-width:100%;height:auto;"></center>
+          </div>
+          <div class="modal-body">
+            <center><%= work.description %></center>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% i+=1 %>
+    <% if i%3==0 || i == total_works %>
       </div>
     <% end %>
   <% end %>
 </div>
-
-<p>hi</p>
