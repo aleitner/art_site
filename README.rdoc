@@ -2,6 +2,9 @@
 
 This is just a small website I made so that you can upload images and have them display in a gallery.
 
+Dependencies
+ImageMagick
+
 Ruby version  2.2.1
 Rails version 4.2.6
 
