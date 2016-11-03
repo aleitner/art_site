@@ -27,7 +27,7 @@ class ArtsController < ApplicationController
   def create
     @art = Art.new(art_params)
 
-    @art.tag_list = params[:tag_list]
+    @art.tag_list = art_params[:tag_list]
 
     respond_to do |format|
       if @art.save
