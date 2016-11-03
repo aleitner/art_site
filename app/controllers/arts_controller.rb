@@ -27,6 +27,8 @@ class ArtsController < ApplicationController
   def create
     @art = Art.new(art_params)
 
+    @art.tag_list = params[:tag_list]
+
     respond_to do |format|
       if @art.save
         format.html { redirect_to @art, notice: 'Art was successfully created.' }
@@ -70,6 +72,6 @@ class ArtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def art_params
-      params.require(:art).permit(:name, :description, :image, :remove_image)
+      params.require(:art).permit(:name, :description, :image, :remove_image, :tag_list)
     end
 end

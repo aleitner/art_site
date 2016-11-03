@@ -11,13 +11,15 @@
 </p>
 
 <p>
+  <strong>Tags:</strong>
+  <%= @art.tag_list %>
+</p>
+
+<p>
   <strong>Image:</strong>
    <% if @art.image? %>
-      <%= image_tag @art.image.thumb.url %><br />
       <%= image_tag @art.image.small.url %><br />
-      <%= image_tag @art.image.medium.url %><br />
-      <%= image_tag @art.image.large.url %>
-   <% end %> 
+   <% end %>
 </p>
 
 <%= link_to 'Edit', edit_art_path(@art) %> |

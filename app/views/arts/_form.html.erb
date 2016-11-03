@@ -20,13 +20,17 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field">
     <%= f.label :image %><br />
     <%= f.file_field :image %>
     <% if f.object.image? %>
       <br />
       <%= image_tag f.object.image.medium.url %>
       <%= f.label :remove_image %>
-      <%= f.check_box :remove_image %> 
+      <%= f.check_box :remove_image %>
     <% end %>
   </div>
   <div class="actions">
