@@ -5,6 +5,9 @@
 <div id="gallery" class="container">
   <% i=0 %>
   <% total_works = @arts.count %>
+  <% if total_works < 1 %>
+    There are no works to display!
+  <% end %>
   <% for work in @arts %>
     <% if i%3==0 %>
       <div class="row">
