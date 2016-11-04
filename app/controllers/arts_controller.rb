@@ -8,6 +8,21 @@ class ArtsController < ApplicationController
     @arts = Art.all.order(position: :asc)
   end
 
+  def move_lower
+    @art = Art.find(params[:id])
+    @art.move_lower
+  end
+
+  def move_higher
+    @art = Art.find(params[:id])
+    @art.move_higher
+  end
+
+  def hide
+    @art = Art.find(params[:id])
+    @art.remove_from_list
+  end
+
   # GET /arts/1
   # GET /arts/1.json
   def show
