@@ -10,17 +10,35 @@ class ArtsController < ApplicationController
 
   def move_lower
     @art = Art.find(params[:id])
-    @art.move_lower
+    if !@art.position.nil?
+      @art.move_lower
+    end
+    respond_to do |format|
+      format.html { redirect_to arts_url }
+      format.json { head :no_content }
+    end
   end
 
   def move_higher
     @art = Art.find(params[:id])
-    @art.move_higher
+    if !@art.position.nil?
+      @art.move_higher
+    end
+    respond_to do |format|
+      format.html { redirect_to arts_url }
+      format.json { head :no_content }
+    end
   end
 
   def hide
     @art = Art.find(params[:id])
-    @art.remove_from_list
+    if !@art.position.nil?
+      @art.remove_from_list
+    end
+    respond_to do |format|
+      format.html { redirect_to arts_url }
+      format.json { head :no_content }
+    end
   end
 
   # GET /arts/1

@@ -19,7 +19,13 @@
   <tbody>
     <% @arts.each do |art| %>
       <tr>
-        <td><center>▲<br/><%= art.position %><br/>▼</center></td>
+        <td>
+          <center>
+            <%= link_to '▲', arts_move_higher_path(:id => art.id) %>
+            <br/><%= art.position %><br/>
+            <%= link_to '▼', arts_move_lower_path(:id => art.id) %>
+          </center>
+        </td>
         <td><%= art.name %></td>
         <td><%= art.description %></td>
         <td><%= art.tag_list %></td>

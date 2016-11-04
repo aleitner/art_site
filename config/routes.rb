@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'arts/move_higher/:id' => 'arts#move_higher', :as => 'arts_move_higher'
+  get 'arts/move_lower/:id' => 'arts#move_lower', :as => 'arts_move_lower'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
