@@ -5,7 +5,7 @@ class ArtsController < ApplicationController
   # GET /arts
   # GET /arts.json
   def index
-    @arts = Art.all
+    @arts = Art.all.order(position: :asc)
   end
 
   # GET /arts/1

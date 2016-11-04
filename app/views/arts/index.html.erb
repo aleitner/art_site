@@ -7,6 +7,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Position</th>
       <th>Name</th>
       <th>Description</th>
       <th>Tags</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @arts.each do |art| %>
       <tr>
+        <td><%= art.position %></td>
         <td><%= art.name %></td>
         <td><%= art.description %></td>
         <td><%= art.tag_list %></td>
