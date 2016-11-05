@@ -33,6 +33,12 @@
             <center><%= work.description %></center>
           </div>
           <div class="modal-footer">
+
+             <div style="float:left;color:#737373;">
+               <% work.tag_list.each do |tag| %>
+                <a class="btn btn-default btn-xs" href="/?tag=<%= tag %>"><%= tag %></a>
+                <% end %>
+             </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
