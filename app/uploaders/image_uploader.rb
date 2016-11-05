@@ -51,6 +51,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   def resize_if_larger_than(width, height)
     manipulate! do |img|
       if (img[:width] > width or img[:height] > height)
+        if img[:format].downcase == 'gif'
+          #coalesce animated gifs before resize.
+          img.coalesce
+        end
         img.resize "#{width}x#{height}"
         img = yield(img) if block_given?
         img
