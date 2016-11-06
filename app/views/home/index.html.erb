@@ -1,4 +1,4 @@
-<center><h1>chuteki | gallery</h1></center>
+<center><h1><a href="http://gallery.chuteki.com">chuteki | gallery</a></h1></center>
 
 <center><%= will_paginate @arts %></center>
 
@@ -51,3 +51,13 @@
     <% end %>
   <% end %>
 </div>
+
+<center><%= will_paginate @arts %></center>
+
+<script type="application/javascript">
+    $(window).on('popstate', function() {
+        $('.modal').modal('hide');
+        $( ".modal-backdrop" ).remove();
+        $( ".in" ).remove();
+    });
+</script>
