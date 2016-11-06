@@ -45,6 +45,14 @@
       </div>
     </div>
 
+    <script type="application/javascript">
+        $(window).on('popstate', function() {
+            $('.myModal<%=i%>').modal('hide');
+            $( ".modal-backdrop" ).remove();
+            $( ".in" ).remove();
+        });
+    </script>
+
     <% i+=1 %>
     <% if i%3==0 || i == total_works %>
       </div>
@@ -53,11 +61,3 @@
 </div>
 
 <center><%= will_paginate @arts %></center>
-
-<script type="application/javascript">
-    $(window).on('popstate', function() {
-        $('.modal').modal('hide');
-        $( ".modal-backdrop" ).remove();
-        $( ".in" ).remove();
-    });
-</script>
