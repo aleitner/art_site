@@ -36,10 +36,10 @@
 
              <div style="float:left;color:#737373;">
                <% work.tag_list.each do |tag| %>
-                <a class="btn btn-default btn-xs" href="/?tag=<%= tag %>"><%= tag %></a>
+                <a class="btn btn-default btn-xs" href="/?tag=<%= tag %>" onclick="$('#myModal<%=i%>').modal('hide');"><%= tag %></a>
                 <% end %>
              </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$('#myModal<%=i%>').modal('hide');">Close</button>
           </div>
         </div>
       </div>
