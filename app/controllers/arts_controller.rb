@@ -8,6 +8,28 @@ class ArtsController < ApplicationController
     @arts = Art.all.order(position: :asc)
   end
 
+  def move_to_top
+    @art = Art.find(params[:id])
+    if !@art.position.nil?
+      @art.move_to_top
+    end
+    respond_to do |format|
+      format.html { redirect_to arts_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def move_to_bottom
+    @art = Art.find(params[:id])
+    if !@art.position.nil?
+      @art.move_to_bottom
+    end
+    respond_to do |format|
+      format.html { redirect_to arts_url }
+      format.json { head :no_content }
+    end
+  end
+
   def move_lower
     @art = Art.find(params[:id])
     if !@art.position.nil?

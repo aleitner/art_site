@@ -21,9 +21,11 @@
       <tr>
         <td>
           <center>
-            <%= link_to '▲', arts_move_higher_path(:id => art.id) %>
-            <br/><%= art.position %><br/>
-            <%= link_to '▼', arts_move_lower_path(:id => art.id) %>
+            <%= link_to 'Δ', arts_move_to_top_path(:id => art.id) %><br />
+            <%= link_to '▲', arts_move_higher_path(:id => art.id) %><br />
+            <%= art.position %><br />
+            <%= link_to '▼', arts_move_lower_path(:id => art.id) %><br />
+            <%= link_to '∇', arts_move_to_bottom_path(:id => art.id) %>
           </center>
         </td>
         <td><%= art.name %></td>
