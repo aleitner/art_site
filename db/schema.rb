@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20161104005350) do
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "category"
     t.string   "tags"
     t.integer  "position"
   end
