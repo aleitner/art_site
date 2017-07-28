@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104005350) do
+ActiveRecord::Schema.define(version: 20170728172202) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,10 +37,11 @@ ActiveRecord::Schema.define(version: 20161104005350) do
     t.string   "name"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "tags"
     t.integer  "position"
+    t.boolean  "hidden",      default: false
   end
 
   create_table "taggings", force: :cascade do |t|

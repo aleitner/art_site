@@ -1,26 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="light-well">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @art.name %>
-</p>
+        <p>
+          <strong>Name:</strong>
+          <%= @art.name %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @art.description %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @art.description %>
+        </p>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @art.tag_list %>
-</p>
+        <p>
+          <strong>Tags:</strong>
+          <%= @art.tag_list %>
+        </p>
 
-<p>
-  <strong>Image:</strong>
-   <% if @art.image? %>
-      <%= image_tag @art.image.small.url %><br />
-   <% end %>
-</p>
+        <p>
+          <strong>Image:</strong>
+           <% if @art.image? %>
+              <%= image_tag @art.image.small.url %><br />
+           <% end %>
+        </p>
 
-<%= link_to 'Edit', edit_art_path(@art) %> |
-<%= link_to 'Back', arts_path %>
+        <%= link_to 'Edit', edit_art_path(@art) %> |
+        <%= link_to 'Back', arts_path %>
+      </div>
+    </div>
+  </div>
+</div>
