@@ -28,7 +28,8 @@
           </div>
           <div class="modal-body">
             <center><img src="<%=work.image.large.url%>" style="max-width:100%;height:auto;"></center>
-
+            
+            <br />
             <span id="next" class="form-control-static pull-right"><a class="btn btn-default btn-xs" onclick="goto(<%=i%>, <%=i + 1%>)">&#x3e;</a></span>
             <span id="prev" class="form-control-static pull-left"><a class="btn btn-default btn-xs" onclick="goto(<%=i%>, <%=i - 1%>)">&#x3c;</a></span>
             <center><%= work.description %></center>
