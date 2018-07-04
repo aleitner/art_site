@@ -12,7 +12,7 @@ Running in development
   rails s -p 3001 -b0.0.0.0
   
 Running in production
-  export SECRET_KEY_BASE=$(RAILS_ENV=production rake secret)`
+  export SECRET_KEY_BASE=$(RAILS_ENV=production rake secret)
   export DEVISE_TOKEN_AUTH_SECRET_KEY=
   export RAILS_SERVE_STATIC_FILES=true
   bin/rake db:migrate RAILS_ENV=production
